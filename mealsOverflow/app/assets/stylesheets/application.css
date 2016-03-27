@@ -1,27 +1,59 @@
+*{
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+}
+
 .container {
   width: 65%;
   margin: 0 auto;
   font-family: arial;
   background-color: gainsboro;
-  padding: 5%;
+  padding: 3%;
+  padding-bottom: 5%;
+  box-sizing: border-box;
+
 }
 
 nav {
   display: inline-block;
-  text-align: right;
+  text-decoration: none;
   float: right;
   margin-bottom: 5%;
+  width: 100%;
+  position: fixed;
+  background-color: rgb(46, 46, 46);
+  height: 45px;
+  margin: 0;
+  padding-top: 3%;
+}
+
+nav a{
+  margin-right: 2%;
+  float: right;
+  font-size: 0.8em;
+  color: #DB7221;
+}
+
+ nav .navlinks a{
+  color: #E25525;
+  font-weight: bold;
 }
 
 .thumb {
-  width: 100%;
+  width: 150px;
+  height: 150px;
 }
 
 .posts {
   display: inline-block;
-  padding: 10px;
-  background-color: pink;
-  max-width: 163px;
+  max-width: 28%;
+  margin-right: 2%;
+  height: 170px;
+
 }
 
 .posts p {
@@ -30,6 +62,57 @@ nav {
   padding-top: 0;
 }
 
+.posts a{
+  text-decoration: none;
+  color: #333333;
+}
+
+.posts {
+  width: 35%;
+  height: 200px;
+  vertical-align: top;
+  box-sizing: border-box;
+}
+
+.title {
+  min-height: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+.allposts{
+  margin-left: 10%;
+  box-sizing: border-box;
+}
+
 h1 {
+  font-size: 1.5em;
   text-align: center;
+  margin-top: 20%;
+  margin-bottom: 10%;
+  color: #333333;
+}
+
+fieldset {
+  border: none;
+}
+
+input {
+  display: inline-block;
+  width: 250px;
+}
+
+label{
+  min-width: 100px;
+}
+
+.new_post {
+  max-width: 280px;
+  display: block;
+  margin: 0 auto;
+}
+
+fieldset.submit input, .attachment input {
+  border-radius: 5px;
+  background-color: orange;
 }

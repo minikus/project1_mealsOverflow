@@ -1,5 +1,5 @@
 User.destroy_all
-u1 = User.create :firstname => 'Carmen', :email => 'carmenminikus@gmail.com', :password => 'chicken', :password_confirmation => 'chicken'
+u1 = User.create :admin => true, :firstname => 'Carmen', :email => 'carmenminikus@gmail.com', :password => 'chicken', :password_confirmation => 'chicken'
 u2 = User.create :firstname => 'Daniel', :email => 'trishatov@zoho.com', :password => 'chicken', :password_confirmation => 'chicken'
 u3 = User.create :firstname => 'Wilco', :email => 'wilcoface@gmail.com', :password => 'chicken', :password_confirmation => 'chicken'
 

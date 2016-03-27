@@ -1,7 +1,9 @@
-<h1>Check out Letover Posts</h1>
-<% @posts.each do |post| %>
-  <div class="posts">
-    <p><%= link_to(post.title, post) %></p>
-    <%= image_tag(post.image, :class => 'thumb') %>
-  </div>
-<% end %>
+<h1>Check out Leftovers Near You</h1>
+  <div class="allposts cf">
+    <% @posts.each do |post| %>
+      <div class="posts cf">
+        <div class="title cf"><p><%= link_to(post.title, post) %></p></div>
+        <div class="foodImage cf"><%= image_tag(post.image, :class => 'thumb') %></div>
+      </div>
+  <% end %>
+</div>

@@ -1,0 +1,34 @@
+<%= form_for @post do |f| %>
+  <fieldset>
+    <div class="label"><%= f.label :title %></div>
+    <%= f.text_field :title %>
+  </fieldset>
+  <fieldset>
+    <div class="label"><%= f.label :description %></div>
+    <%=  f.text_field :description %>
+  </fieldset>
+  <fieldset>
+    <div class="label"><%= f.label :location %></div>
+    <%=  f.text_field :location, :placeholder => 'suburb/street name' %>
+  </fieldset>
+  <fieldset>
+    <div class="label"><%= f.label :vegetarian %></div>
+    <%=  f.text_field :vegetarian, :placeholder => 'Yes/No' %>
+  </fieldset>
+  <fieldset>
+    <div class="label"><%= f.label :portion %></div>
+    <%=  f.text_field :portion, :placeholder => 'eg. 1 person' %>
+  </fieldset>
+  <fieldset>
+    <div class="label"><%= f.label :image %></div>
+    <%=  f.url_field :image %>
+  </fieldset>
+  <fieldset class="attachment">
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment%>
+  </fieldset>
+  <fieldset class="submit">
+    <%= f.submit %>
+  </fieldset>
+
+<% end %>

@@ -1,2 +1,12 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1><%= @post.title %></h1>
+<%= image_tag(@post.image, :class => 'feature') %>
+<ul>
+  <li><%= @post.description %></li>
+  <li>Located at: <%= @post.location %></li>
+  <li>vegetarian: <%= @post.vegetarian %></li>
+  <li>Portions: <%= @post.portion %></li>
+</ul>
+
+
+<%= link_to 'Delete Post', @post, :method => :delete %>
+<%= link_to 'Edit Post', edit_post_path(@post) %>
