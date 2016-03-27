@@ -3,12 +3,22 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+  end
+
   def new
+    @post = Post.new
+  end
+
+  def create
   end
 
   def edit
   end
 
-  def show
+  def update
+  end
+
+  def destroy
   end
 end
