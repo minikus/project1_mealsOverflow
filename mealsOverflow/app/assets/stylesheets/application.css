@@ -1,0 +1,35 @@
+.container {
+  width: 65%;
+  margin: 0 auto;
+  font-family: arial;
+  background-color: gainsboro;
+  padding: 5%;
+}
+
+nav {
+  display: inline-block;
+  text-align: right;
+  float: right;
+  margin-bottom: 5%;
+}
+
+.thumb {
+  width: 100%;
+}
+
+.posts {
+  display: inline-block;
+  padding: 10px;
+  background-color: pink;
+  max-width: 163px;
+}
+
+.posts p {
+  font-size: 0.8em;
+  margin-top: 2%;
+  padding-top: 0;
+}
+
+h1 {
+  text-align: center;
+}

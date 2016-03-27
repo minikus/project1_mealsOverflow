@@ -1,0 +1,7 @@
+<h1>Check out Letover Posts</h1>
+<% @posts.each do |post| %>
+  <div class="posts">
+    <p><%= link_to(post.title, post) %></p>
+    <%= image_tag(post.image, :class => 'thumb') %>
+  </div>
+<% end %>
