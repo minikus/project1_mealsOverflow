@@ -116,3 +116,7 @@ fieldset.submit input, .attachment input {
   border-radius: 5px;
   background-color: orange;
 }
+
+p.userprofileinfo {
+  width: 50%;
+}

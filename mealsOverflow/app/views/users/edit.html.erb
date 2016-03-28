@@ -1,2 +1,34 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Your Profile</h1>
+<p class="userprofileinfo">Hi <%=@user.firstname%>! Remeber, the more friendly your profile is, the more welcoming others will be to share their food with you.</p>
+
+<%= form_for @user do |f| %>
+  <fieldset>
+    <div class="label"><%= f.label :firstname %></div>
+    <%= f.text_field :firstname %>
+  </fieldset>
+  <fieldset>
+    <div class="label"><%= f.label :email %></div>
+    <%=  f.text_field :email %>
+  </fieldset>
+  <fieldset>
+    <div class="label"><%= f.label :mobile %></div>
+    <%=  f.text_field :mobile, :placeholder => '0400 777 000' %>
+  </fieldset>
+  <fieldset>
+    <div class="label"><%= f.label :new_password %></div>
+    <%=  f.password_field :password%>
+  </fieldset>
+  <fieldset>
+    <div class="label"><%= f.label :password_confirmation, :require => true %></div>
+    <%=  f.password_field :password%>
+  </fieldset>
+  <fieldset>
+    <div class="label"><%= f.label :image %></div>
+    <%=  f.url_field :image %>
+  </fieldset>
+
+  <fieldset class="submit">
+    <%= f.submit %>
+  </fieldset>
+
+<% end %>
