@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find params[:id]
   end
 
   def new
@@ -15,7 +16,8 @@ class UsersController < ApplicationController
   def create
     @user = User.create user_params
     if @user.save
-      redirect_to root_path
+    session[:user_id] = @user.id
+    redirect_to edit_user_path(@user.id)
     else
       render :new
     end
@@ -40,7 +42,7 @@ def user_params
 end
 
 def authorise
-  redirect_to root_path unless (@current_user.present? && @curent_user.admin?)
+  redirect_to root_path unless (@current_user.present? && @current_user.admin?)
 end
 
 end

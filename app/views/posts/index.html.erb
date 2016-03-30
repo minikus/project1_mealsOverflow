@@ -1,9 +1,11 @@
-<h1>Check out Leftovers Near You</h1>
+<h1>Find Leftovers Near You</h1>
   <div class="allposts cf">
     <% @posts.each do |post| %>
-      <div class="posts cf">
-        <div class="title cf"><p><%= link_to(post.title, post) %></p></div>
-        <div class="foodImage cf"><%= image_tag(post.image, :class => 'thumb') %></div>
+      <div class="box">
+        <div class="posts cf">
+          <div class="indextitle"><p><%= link_to(post.title, post) %></p></div>
+          <div class="foodImage tint cf"><%= link_to(image_tag(post.image, :class => 'thumb'), post) %></div>
+          </div>
       </div>
   <% end %>
 </div>

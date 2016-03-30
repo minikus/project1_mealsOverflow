@@ -6,3 +6,34 @@
   <% end %>
 </ol>
 <% end %>
+
+   <%= form_for @user do |f| %>
+     <fieldset>
+       <div class="label"><%= f.label :firstname %></div>
+       <%= f.text_field :firstname %>
+     </fieldset>
+     <fieldset>
+       <div class="label"><%= f.label :email %></div>
+       <%=  f.email_field :email %>
+     </fieldset>
+     <fieldset>
+       <div class="label"><%= f.label :mobile %></div>
+       <%=  f.text_field :mobile, :placeholder => '0400 777 000' %>
+     </fieldset>
+     <fieldset>
+       <div class="label"><%= f.label :new_password %></div>
+       <%=  f.password_field :password%>
+     </fieldset>
+     <fieldset>
+       <div class="label"><%= f.label :password_confirmation, :require => true %></div>
+       <%=  f.password_field :password%>
+     </fieldset>
+     <fieldset>
+       <div class="label"><%= f.label :image %></div>
+       <%=  f.url_field :image %>
+     </fieldset>
+
+     <fieldset class="signup">
+       <%= f.submit %>
+     </fieldset>
+<% end %>

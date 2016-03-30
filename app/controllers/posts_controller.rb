@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authorise, :only => [:new]
+
   def index
     @posts = Post.all
   end
@@ -12,8 +14,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = Post.create post_params
-    redirect_to post
+    @post = Post.new post_params
+    if @post.save
+      @current_user.posts << @post # Associate this post with the user
+      redirect_to @post
+    else
+      render :new
+    end
+
   end
 
   def edit
@@ -36,4 +44,11 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :description, :location, :vegetarian, :portion, :image, :user_id)
   end
+  def authorise
+    unless (@current_user.present?)
+      flash[:danger] = "Please Login / Singup to make a post"
+      redirect_to root_path
+    end
+  end
+
 end

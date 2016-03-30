@@ -1,19 +1,27 @@
-<%= form_for @post do |f| %>
+<% if @post.errors.any? %>
+ <ol>
+   <% @post.errors.full_messages.each do |msg| %>
+   <li><%= msg %></li>
+   <% end %>
+ </ol>
+ <% end %>
+
+<%= form_for @post, html: {multipart: true} do |f| %>
   <fieldset>
     <div class="label"><%= f.label :title %></div>
     <%= f.text_field :title %>
   </fieldset>
   <fieldset>
     <div class="label"><%= f.label :description %></div>
-    <%=  f.text_field :description %>
+    <%= f.text_area :description, size: "42.5x12" %>
   </fieldset>
   <fieldset>
     <div class="label"><%= f.label :location %></div>
     <%=  f.text_field :location, :placeholder => 'suburb/street name' %>
   </fieldset>
   <fieldset>
-    <div class="label"><%= f.label :vegetarian %></div>
-    <%=  f.text_field :vegetarian, :placeholder => 'Yes/No' %>
+    <span class="checkbox"><%= f.label :vegetarian %></span>
+    <span class="checkbox"><%=  check_box_tag( :vegetarian)%></span>
   </fieldset>
   <fieldset>
     <div class="label"><%= f.label :portion %></div>
@@ -21,11 +29,7 @@
   </fieldset>
   <fieldset>
     <div class="label"><%= f.label :image %></div>
-    <%=  f.url_field :image %>
-  </fieldset>
-  <fieldset class="attachment">
-    <%= f.label :attachment %>
-    <%= f.file_field :attachment%>
+    <%= f.url_field :image %>
   </fieldset>
   <fieldset class="submit">
     <%= f.submit %>

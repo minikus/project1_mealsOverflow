@@ -1,2 +1,14 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="usershow">
+  <div class="userimage">
+    <% if @user.image.nil?  %>
+      <%= image_tag("defaulticon.jpg", :class => 'usericon') %>
+    <%else%>
+      <%= image_tag(@user.image, :class => 'usericon') %>
+    <% end %>
+  </div>
+  <div class="userdetails">
+    <p><span>Email / Call <%= @user.firstname %> to organize pickup</span> </p>
+    <p><span class="bold-orange">contact:  </span><%= @user.email %></p>
+    <p><span class="bold-orange">mobile: </span><%= @user.mobile %></p>
+  </div>
+</div>

@@ -7,28 +7,27 @@
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Raleway:300,500,700' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="<%= params[:controller] %>-<%= params[:action] %>">
   <nav>
-    <% if @current_user.present? %>
-   <% if @current_user.admin? %>
-   <%= link_to 'All Users', users_path %>
-  <% end %>
-            <span class="navlinks"><%= link_to "Logout #{@current_user.firstname}", login_path, :method => :delete %></span>
-            <span class="navlinks"><%= link_to "Edit Profile", edit_user_path(@current_user) %></span>
-          <% else %>
-            <span class="navlinks"><%= link_to "Sign up", signup_path %></span>
-            <span class="navlinks"><%= link_to "Login", login_path %></span>
-          <% end %>
-    <span class="navs"><%= link_to 'About', root_path %><span>
     <a class ="navs" href="/posts/new">Post your Leftovers</a>
     <a class="navs" href="/posts">Browse Leftovers</a>
-
+    <% if @current_user.present? %>
+    <% if @current_user.admin? %>
+   <%= link_to 'All Users', users_path %>
+  <% end %>
+    <span class="navs"><%= link_to 'About', root_path %></span>
+    <span class="navlinks"><%= link_to "Logout #{@current_user.firstname}", login_path, :method => :delete %></span>
+    <span class="navlinks"><%= link_to "Edit Profile", edit_user_path(@current_user) %></span>
+  <% else %>
+    <span class="navlinks"><%= link_to "Sign up", signup_path %></span>
+    <span class="navlinks"><%= link_to "Login", login_path %></span>
+  <% end %>
   </nav>
 <div class="container cf">
 
-  <% if flash[:error].present? %>
-    <h2> class="error"
-     <%= flash[:error] %>
+  <% if flash[:danger].present? %>
+    <h2 class="error">
+     <%= flash[:danger] %>
     </h2>
   <% end %>
   <%= yield %>

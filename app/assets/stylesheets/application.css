@@ -1,122 +1,16 @@
-*{
-  font-family: 'Raleway', sans-serif;
-  text-decoration: none;
-}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
 
-body {
-  margin: 0;
-}
-
-.container {
-  width: 65%;
-  margin: 0 auto;
-  font-family: arial;
-  background-color: gainsboro;
-  padding: 3%;
-  padding-bottom: 5%;
-  box-sizing: border-box;
-
-}
-
-nav {
-  display: inline-block;
-  text-decoration: none;
-  float: right;
-  margin-bottom: 5%;
-  width: 100%;
-  position: fixed;
-  background-color: rgb(46, 46, 46);
-  height: 45px;
-  margin: 0;
-  padding-top: 3%;
-}
-
-nav a{
-  margin-right: 2%;
-  float: right;
-  font-size: 0.8em;
-  color: #DB7221;
-}
-
- nav .navlinks a{
-  color: #E25525;
-  font-weight: bold;
-}
-
-.thumb {
-  width: 150px;
-  height: 150px;
-}
-
-.posts {
-  display: inline-block;
-  max-width: 28%;
-  margin-right: 2%;
-  height: 170px;
-
-}
-
-.posts p {
-  font-size: 0.8em;
-  margin-top: 2%;
-  padding-top: 0;
-}
-
-.posts a{
-  text-decoration: none;
-  color: #333333;
-}
-
-.posts {
-  width: 35%;
-  height: 200px;
-  vertical-align: top;
-  box-sizing: border-box;
-}
-
-.title {
-  min-height: 30px;
-  font-weight: bold;
-  color: white;
-}
-
-.allposts{
-  margin-left: 10%;
-  box-sizing: border-box;
-}
-
-h1 {
-  font-size: 1.5em;
-  text-align: center;
-  margin-top: 20%;
-  margin-bottom: 10%;
-  color: #333333;
-}
-
-fieldset {
-  border: none;
-}
-
-input {
-  display: inline-block;
-  width: 250px;
-}
-
-label{
-  min-width: 100px;
-}
-
-.new_post {
-  max-width: 280px;
-  display: block;
-  margin: 0 auto;
-}
-
-fieldset.submit input, .attachment input {
-  border-radius: 5px;
-  background-color: orange;
-}
-
-p.userprofileinfo {
-  width: 50%;
-}
+ */
