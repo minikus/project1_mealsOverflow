@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-gem 'paperclip'
+gem 'geocode'
 
 gem 'cloudinary'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,19 +1,21 @@
 <h1>All Users: TOP SECRET</h1>
 <div class="usersindex">
   <% @users.each do |user| %>
-    <div class="userimage">
-      <% if user.image.nil?  %>
-        <%= image_tag("defaulticon.jpg", :class => 'usericon') %>
-      <%else%>
-        <%= image_tag(user.image, :class => 'usericon') %>
-      <% end %>
-    </div>
-    <div class="userdetails">
-      <p><span class="bold-orange"<%= user.firstname %></span> </p>
-      <p> <span class="bold-orange">contact:  </span><%= user.email %></p>
-      <p> <span class="bold-orange">mobile: </span><%= user.mobile %></p>
-    </div>
-    <br>
-    <br>
-  <% end %>
+  <div class="eachuser">
+      <div class="userimage">
+        <% if user.image.nil?  %>
+          <%= image_tag("defaulticon.jpg", :class => 'usericon') %>
+        <%else%>
+          <%= image_tag(user.image, :class => 'usericon') %>
+        <% end %>
+      </div>
+      <div class="userdetails">
+        <p><span class="bold-orange"<%= user.firstname %></span> </p>
+        <p> <span class="bold-orange">contact:  </span><%= user.email %></p>
+        <p> <span class="bold-orange">mobile: </span><%= user.mobile %></p>
+      </div>
+      <br>
+      <br>
+    <% end %>
+  </div>
 </div>

@@ -9,19 +9,23 @@
 </head>
 <body class="<%= params[:controller] %>-<%= params[:action] %>">
   <nav>
-    <a class ="navs" href="/posts/new">Post your Leftovers</a>
-    <a class="navs" href="/posts">Browse Leftovers</a>
-    <% if @current_user.present? %>
-    <% if @current_user.admin? %>
-   <%= link_to 'All Users', users_path %>
-  <% end %>
-    <span class="navs"><%= link_to 'About', root_path %></span>
-    <span class="navlinks"><%= link_to "Logout #{@current_user.firstname}", login_path, :method => :delete %></span>
-    <span class="navlinks"><%= link_to "Edit Profile", edit_user_path(@current_user) %></span>
-  <% else %>
-    <span class="navlinks"><%= link_to "Sign up", signup_path %></span>
-    <span class="navlinks"><%= link_to "Login", login_path %></span>
-  <% end %>
+    <%= image_tag("logo_white.png", :class => "logo") %>
+
+    <div class="rightnav cf">
+      <a class ="navs" href="/posts/new">Post your Leftovers</a>
+      <a class="navs" href="/posts">Browse Leftovers</a>
+      <% if @current_user.present? %>
+      <% if @current_user.admin? %>
+     <%= link_to 'All Users', users_path %>
+      <% end %>
+        <span class="navs"><%= link_to 'About', root_path %></span>
+        <span class="navlinks"><%= link_to "Logout #{@current_user.firstname}", login_path, :method => :delete %></span>
+        <span class="navlinks"><%= link_to "Edit Profile", edit_user_path(@current_user) %></span>
+      <% else %>
+        <span class="navlinks"><%= link_to "Sign up", signup_path %></span>
+        <span class="navlinks"><%= link_to "Login", login_path %></span>
+      <% end %>
+    </div>
   </nav>
 <div class="container cf">
 
