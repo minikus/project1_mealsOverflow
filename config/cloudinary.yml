@@ -1,18 +1,18 @@
 development:
   cloud_name: minikus
-  api_key: '874837483274837'
-  api_secret: a676b67565c6767a6767d6767f676fe1
+  api_key: '241279335228834'
+  api_secret: Jbrg5kE_hKjew5hfSj9B-yxpCQU
   enhance_image_tag: true
   static_image_support: false
 production:
   cloud_name: minikus
-  api_key: '874837483274837'
-  api_secret: a676b67565c6767a6767d6767f676fe1
+  api_key: '241279335228834'
+  api_secret: Jbrg5kE_hKjew5hfSj9B-yxpCQU
   enhance_image_tag: true
   static_image_support: true
 test:
   cloud_name: minikus
-  api_key: '874837483274837'
-  api_secret: a676b67565c6767a6767d6767f676fe1
+  api_key: '241279335228834'
+  api_secret: Jbrg5kE_hKjew5hfSj9B-yxpCQU
   enhance_image_tag: true
   static_image_support: false

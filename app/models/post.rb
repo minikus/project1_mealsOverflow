@@ -2,15 +2,17 @@
 #
 # Table name: posts
 #
-#  id          :integer          not null, primary key
-#  title       :text
-#  description :text
-#  location    :text
-#  vegetarian  :text
-#  portion     :integer
-#  image       :text
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id           :integer          not null, primary key
+#  title        :text
+#  description  :text
+#  location     :text
+#  portion      :integer
+#  image        :text
+#  created_at   :datetime
+#  updated_at   :datetime
+#  user_id      :integer
+#  vegetarian   :boolean          default("false")
+#  availability :boolean          default("true")
 #
 
 class Post < ActiveRecord::Base

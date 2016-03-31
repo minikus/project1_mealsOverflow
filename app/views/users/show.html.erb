@@ -9,7 +9,7 @@
       <% end %>
     </div>
     <div class="userdetails cf">
-      <p><span>Email / Call <%= @user.firstname %> to organize pickup</span> </p>
+      <p><span class="bold_darkorange">Email / Call <%= @user.firstname %> to organize pickup</span> </p>
       <p><span class="bold-orange">contact:  </span><%= @user.email %></p>
       <p><span class="bold-orange">mobile: </span><%= @user.mobile %></p>
     </div>
@@ -19,15 +19,18 @@
   </div>
 
   <div class="all_reviews cf">
-    <h3><%= @user.firstname %>'s Reviews</h3>
+    <h3><span class="bold_darkorange"><%= @user.firstname %>'s Reviews</span></h3>
+        <br>
     <% @user.reviews.each do |review| %>
-        <span class="rating"><%= review.rating %> :</span>
+      <div class="individual_reviews">
+        <span class="rating"><%= review.rating %> / 10 :</span>
         <span class="review_comments"><%= review.comments %></span>
         <br>
-        posted by: <%= link_to @user.post.firstname %>
         <br>
-        <br>
-        <br>
+        <div class="light-orange">
+          posted by: <%= link_to review.reviewer.firstname, review.reviewer %>
+        </div>
+      </div>
     <% end %>
   </div>
 

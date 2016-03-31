@@ -6,6 +6,7 @@ root :to => 'pages#welcome'
   resources :users do
     resources :reviews
   end
+
   resources :posts
 
   get '/signup' => 'users#new'

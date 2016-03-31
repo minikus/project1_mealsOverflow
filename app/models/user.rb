@@ -6,10 +6,12 @@
 #  firstname       :text
 #  email           :text
 #  mobile          :integer
-#  password_digest :integer
+#  password_digest :text
 #  image           :text
 #  created_at      :datetime
 #  updated_at      :datetime
+#  admin           :boolean          default("false")
+#  reviewer_id     :integer
 #
 
 class User < ActiveRecord::Base
@@ -18,5 +20,4 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, :uniqueness => true
   has_many :posts
   has_many :reviews
-
 end

@@ -7,7 +7,7 @@
   border-radius: 5px;
   border: 1px solid rgb(212, 212, 212);
   background-color: white;
-  padding: 5%;
+  padding: 10%;
 }
 
 .userinfo button{
@@ -22,4 +22,14 @@ h3{
 span.rating {
   font-weight: bold;
   color: #E25525;
+}
+
+.userdetails p {
+  font-size: 0.8em
+}
+
+.individual_reviews{
+  border: 2px dotted grey;
+  margin-top: 5%;
+  padding: 5%;
 }

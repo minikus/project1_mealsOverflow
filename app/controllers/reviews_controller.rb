@@ -8,7 +8,8 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.create review_params
-    @review.update :user_id => params[:user_id]
+    @review.update :user_id => params[:user_id] # Who we're reviewing
+    @review.update :reviewer_id => @current_user.id # Who wrote the review
     redirect_to user_path(@review.user_id)
   end
 
