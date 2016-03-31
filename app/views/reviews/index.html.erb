@@ -1,2 +1,11 @@
-<h1>Reviews#index</h1>
-<p>Find me in app/views/reviews/index.html.erb</p>
+<h1><%= @review.user %> Reviews</h1>
+<div class="new_review">
+  <% @reviews.each do |review| %>
+    <div class="indextitle">
+      <span>
+        <span class="rating"><%= review.rating %></span>
+        : <%=  review.comments %>
+      </span>
+    </div>
+  <% end %>
+</div>

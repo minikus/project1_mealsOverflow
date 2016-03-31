@@ -6,7 +6,10 @@ fieldset {
   border: none;
 }
 
-
+p {
+  font-weight: 200;
+  font-size: 0.9em;
+}
 
 p.userprofileinfo {
   width: 50%;
@@ -18,7 +21,8 @@ p.userprofileinfo {
 }
 
 .usericon {
-  width: 50px;
+  width: 80px;
+  margin-top: 40%;
 }
 
 .userimage{
@@ -28,9 +32,10 @@ p.userprofileinfo {
 }
 
 .userdetails{
-  float: left;
+  float: right;
   width: 75%;
   line-height: 1;
+  background-color: white;
 }
 
 .usersindex {
@@ -54,4 +59,10 @@ p.userprofileinfo {
 .user_heading h1{
   margin-top: 25%;
   padding: 0;
+}
+
+.userinfo {
+  background-color: white;
+  margin-bottom: 5%;
+  padding: 5%;
 }

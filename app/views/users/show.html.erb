@@ -1,14 +1,34 @@
-<div class="usershow">
-  <div class="userimage">
-    <% if @user.image.nil?  %>
-      <%= image_tag("defaulticon.jpg", :class => 'usericon') %>
-    <%else%>
-      <%= image_tag(@user.image, :class => 'usericon') %>
+<div class="usershow cf">
+
+  <div class="userinfo cf">
+    <div class="userimage cf">
+      <% if @user.image.nil?  %>
+        <%= image_tag("defaulticon.jpg", :class => 'usericon') %>
+      <%else%>
+        <%= image_tag(@user.image, :class => 'usericon') %>
+      <% end %>
+    </div>
+    <div class="userdetails cf">
+      <p><span>Email / Call <%= @user.firstname %> to organize pickup</span> </p>
+      <p><span class="bold-orange">contact:  </span><%= @user.email %></p>
+      <p><span class="bold-orange">mobile: </span><%= @user.mobile %></p>
+    </div>
+    <button class="create_new_review cf">
+      Add a review for <%= link_to @user.firstname, new_user_review_path(@user)%>
+    </button>
+  </div>
+
+  <div class="all_reviews cf">
+    <h3><%= @user.firstname %>'s Reviews</h3>
+    <% @user.reviews.each do |review| %>
+        <span class="rating"><%= review.rating %> :</span>
+        <span class="review_comments"><%= review.comments %></span>
+        <br>
+        posted by: <%= link_to @user.post.firstname %>
+        <br>
+        <br>
+        <br>
     <% end %>
   </div>
-  <div class="userdetails">
-    <p><span>Email / Call <%= @user.firstname %> to organize pickup</span> </p>
-    <p><span class="bold-orange">contact:  </span><%= @user.email %></p>
-    <p><span class="bold-orange">mobile: </span><%= @user.mobile %></p>
-  </div>
+
 </div>
