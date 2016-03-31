@@ -1,6 +1,20 @@
-<h1>Your Profile</h1>
+<div class="user_heading">
+  <div class="userimage">
+    <% if @user.image.nil?  %>
+      <%= image_tag("defaulticon.jpg", :class => 'usericon') %>
+    <%else%>
+      <%= image_tag(@user.image, :class => 'usericon') %>
+    <% end %>
+  </div>
+  <h1>Your Profile</h1>
+</div>
+
+
 
 <%= form_for @user do |f| %>
+
+
+
   <fieldset>
     <div class="label"><%= f.label :firstname %></div>
     <%= f.text_field :firstname %>

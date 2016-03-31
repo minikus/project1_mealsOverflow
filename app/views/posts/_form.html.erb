@@ -21,7 +21,11 @@
   </fieldset>
   <fieldset>
     <span class="checkbox"><%= f.label :vegetarian %></span>
-    <span class="checkbox"><%=  check_box_tag( :vegetarian)%></span>
+    <span class="checkbox"><%= f.check_box( :vegetarian)%></span>
+  </fieldset>
+  <fieldset>
+    <span class="checkbox"><%= f.label :availability, 'Tick when no longer available' %></span>
+    <span class="checkbox"><%= f.check_box( :availability)%></span>
   </fieldset>
   <fieldset>
     <div class="label"><%= f.label :portion %></div>
@@ -29,7 +33,7 @@
   </fieldset>
   <fieldset>
     <div class="label"><%= f.label :image %></div>
-    <%= f.url_field :image %>
+    <%= file_field_tag :image_url  %>
   </fieldset>
   <fieldset class="submit">
     <%= f.submit %>

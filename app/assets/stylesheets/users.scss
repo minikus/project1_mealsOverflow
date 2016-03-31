@@ -2,14 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-
-
-
-
-
-
 fieldset {
   border: none;
 }
@@ -32,7 +24,7 @@ p.userprofileinfo {
 .userimage{
   float: left;
   width: 20%;
-  margin-top: 5%
+  margin-top: 0;
 }
 
 .userdetails{
@@ -51,4 +43,15 @@ p.userprofileinfo {
   width: 50%;
   margin: 0 auto;
   margin-top: 10%;
+}
+
+.user_heading{
+  max-width: 272px;
+  margin: 0 auto;
+  margin-bottom: 8%;
+}
+
+.user_heading h1{
+  margin-top: 25%;
+  padding: 0;
 }

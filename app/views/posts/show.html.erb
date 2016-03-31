@@ -1,19 +1,52 @@
 <h1><%= @post.title %></h1>
 
 <div class="show">
-  <%= image_tag(@post.image, :class => 'feature') %>
+  <%= cl_image_tag @post.image,  :class => 'feature' %>
+
   <ul>
     <li><%= @post.description %></li>
     <br>
     <br>
     <li><b>Location: </b><%= @post.location %></li>
-    <li><b>vegetarian: </b><%= @post.vegetarian %></li>
+    <li><b>vegetarian: </b>
+      <% if @post.vegetarian == true %>
+        Yes
+      <% else %>
+        No
+      <% end %>
+    </li>
+    <li><b>availability: </b>
+      <% if @post.availability == true %>
+        All Gone!
+      <% else %>
+        Still availabile!
+      <% end %>
+    </li>
+
     <li><b>Portions: </b><%= @post.portion %></li>
     <li><b>Posted by: </b><%= link_to @post.user.firstname, user_path(@post.user) %></li>
   </ul>
 
   <div class="controls">
-    <%= link_to 'Delete Post', @post, :method => :delete, :class => 'edit'%>
-    <%= link_to 'Edit Post', edit_post_path(@post), :class => 'edit' %>
+    <% if (@current_user == @post.user) || @current_user.admin? %>
+      <%= link_to 'Delete Post', @post, :method => :delete, :class => 'edit'%>
+      <%= link_to 'Edit Post', edit_post_path(@post), :class => 'edit' %>
+    <% end %>
   </div>
+
+    <div id="disqus_thread">
+    <script>
+      (function() {
+      var d = document, s = d.createElement('script');
+
+      s.src = '//mealsoverflow.disqus.com/embed.js';
+
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+    </noscript>
+  </div>
+
 </div>

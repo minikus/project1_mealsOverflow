@@ -17,6 +17,8 @@ class PostsController < ApplicationController
     @post = Post.new post_params
     if @post.save
       @current_user.posts << @post # Associate this post with the user
+      req = Cloudinary::Uploader.upload(params[:image_url])
+      @post.update( :image => req["url"])
       redirect_to @post
     else
       render :new
@@ -42,7 +44,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :description, :location, :vegetarian, :portion, :image, :user_id)
+    params.require(:post).permit(:title, :description, :location,:availability, :vegetarian, :portion, :image, :user_id)
   end
   def authorise
     unless (@current_user.present?)
